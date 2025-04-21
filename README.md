@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# React GitHub Pages Example
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository demonstrates how to deploy a React application to GitHub Pages, set up proper routing with React Router, and implement automated deployment using GitHub Actions.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+You can see a live demo of this project at: https://Ikeh-Akinyemi.github.io/react-gh-pages-example/
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ✅ React 18 application created with Create React App
+- ✅ GitHub Pages deployment configuration
+- ✅ Client-side routing with React Router (HashRouter)
+- ✅ Automated deployment with GitHub Actions
+- ✅ Environment variables and secrets management
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 18+ and npm
+- Git
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/Ikeh-Akinyemi/react-gh-pages-example.git
+cd react-gh-pages-example
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Manual Deployment
 
-## Learn More
+To manually deploy the app to GitHub Pages:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run deploy
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This will build the app and publish it to the `gh-pages` branch of your repository.
 
-### Code Splitting
+### Automated Deployment with GitHub Actions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This repository is set up to automatically deploy to GitHub Pages whenever changes are pushed to the main branch. The GitHub Actions workflow:
 
-### Analyzing the Bundle Size
+1. Checks out the code
+2. Sets up Node.js
+3. Installs dependencies
+4. Builds the project
+5. Deploys to GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Environment Variables
 
-### Making a Progressive Web App
+To use environment variables:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Go to your GitHub repository settings
+2. Navigate to Secrets and Variables > Actions
+3. Add a new repository secret with the name `REACT_APP_API_KEY`
+4. Set the value to your API key
 
-### Advanced Configuration
+The value will be accessible in your React app via `process.env.REACT_APP_API_KEY`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Common Issues
 
-### Deployment
+If you encounter any of these common issues:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Blank page after deployment**: Ensure your `homepage` in `package.json` matches your GitHub Pages URL.
+- **404 errors on page refresh**: This project uses HashRouter to prevent this issue.
+- **Missing assets**: Make sure all assets use relative paths or `process.env.PUBLIC_URL`.
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
